@@ -5,7 +5,7 @@ import Badge from "@mui/material/Badge";
 const CartWidget = () => {
   return (
     <IconButton size="large" aria-label="show 4 new products" color="inherit">
-      <Badge badgeContent={4} color="error">
+      <Badge badgeContent={1} color="error">
         <LocalGroceryStoreIcon />
       </Badge>
     </IconButton>
