@@ -1,4 +1,4 @@
-## 14/05/2023 Primera pre-entrega de eCommerce proyecto final
+## 4/06/2023 Segunda pre-entrega de eCommerce proyecto final
 
 ### Mariano Munarriz
 
