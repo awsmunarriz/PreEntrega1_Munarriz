@@ -1,6 +1,5 @@
-// eslint-disable-next-line react/prop-types
 import { useState, useEffect } from "react";
-import { getProducts} from "../../asyncMock";
+import { getProducts } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
@@ -12,19 +11,25 @@ const ItemListContainer = ({ greeting }) => {
   useEffect(() => {
     const asyncFunc = getProducts;
 
-    asyncFunc(categoryId)
+    asyncFunc()
       .then((response) => {
         setProducts(response);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [categoryId]);
+  }, []);
 
+  const catFilter = products.filter((prod) => prod.category === categoryId);
+  console.log(products);
   return (
     <div>
       <h1>{greeting}</h1>
-      <ItemList products={products} />
+      {categoryId ? (
+        <ItemList products={catFilter} />
+      ) : (
+        <ItemList products={products} />
+      )}
     </div>
   );
 };
