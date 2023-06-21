@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 
 const Item = ({ id, name, img, price, stock }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "15rem", margin: "4px" }}>
       <Card.Img variant="top" src={img} alt={name} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

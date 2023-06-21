@@ -25,9 +25,9 @@ const ItemListContainer = ({ greeting }) => {
   console.log(products);
   return (
     <div>
-      <div className="container">
+      <div>
         <h1>{greeting}</h1>
-        <div className="grid">
+        <div>
           {categoryId ? (
             <ItemList products={catFilter} />
           ) : (
