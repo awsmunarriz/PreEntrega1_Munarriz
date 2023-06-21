@@ -1,12 +1,13 @@
-import "./ItemList.css";
 import Item from "../Item/Item";
 
 const ItemList = ({ products }) => {
   return (
-    <div className="ListGroup">
-      {products.map((prod) => (
-        <Item key={prod.id} {...prod} />
-      ))}
+    <div className="container">
+      <div className="grid">
+        {products.map((prod) => (
+          <Item key={prod.id} {...prod} />
+        ))}
+      </div>
     </div>
   );
 };

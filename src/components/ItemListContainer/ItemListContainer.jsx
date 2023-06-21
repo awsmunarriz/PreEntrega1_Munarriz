@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import "./ItemListContainer.css";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
@@ -24,12 +25,16 @@ const ItemListContainer = ({ greeting }) => {
   console.log(products);
   return (
     <div>
-      <h1>{greeting}</h1>
-      {categoryId ? (
-        <ItemList products={catFilter} />
-      ) : (
-        <ItemList products={products} />
-      )}
+      <div className="container">
+        <h1>{greeting}</h1>
+        <div className="grid">
+          {categoryId ? (
+            <ItemList products={catFilter} />
+          ) : (
+            <ItemList products={products} />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,21 +1,22 @@
-import "./ItemDetail.css";
+import { Card } from "react-bootstrap";
 
 const ItemDetail = ({ name, img, category, descripcion, price }) => {
   return (
-    <article className="CardItem">
-      <header className="Header">
-        <h2 className="ItemHeader">{name}</h2>
-      </header>
-      <picture>
-        <img src={img} alt={name} className="ItemImg" />
-      </picture>
-      <section>
-        <p className="Info">Categoria: {category}</p>
-        <p className="Info">Descripcion: {descripcion}</p>
-        <p className="Info">Precio: ${price}</p>
-      </section>
-      <footer className="ItemFooter"></footer>
-    </article>
+    <div className="d-flex justify-content-center">
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={img} alt={name} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            Categoría: {category}
+            <br />
+            Descripción: {descripcion}
+            <br />
+            Precio: ${price}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
 
